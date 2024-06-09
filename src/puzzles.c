@@ -6,9 +6,6 @@
 
 #define SFX_ON rAUDTERM & 0b10001
 
-#define PL_GB 0
-#define PL_WEB 0b11111111
-
 #define LEFT_MIN 0b10011
 #define LEFT_MAX 0b110110
 #define RIGHT_MIN 0b1111011
