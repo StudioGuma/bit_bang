@@ -15,7 +15,7 @@
 #define RIGHT_MAX 0b10011110
 #define TOP_MIN 0b11011
 #define TOP_MAX 0b111110
-#define BOTTOM_MIN 0b1111011
+#define BOTTOM_MIN 0b1110011
 #define BOTTOM_MAX 0b10010110
 
 #define ASSIST ecto_state & 0b1000
@@ -24,8 +24,7 @@ uint8_t puzzle_id = 0, hearts, num_lsb, num_msb,
 buff[0b1001], timer, clear_timer, buff_assist[0b1001];
 uint16_t goal, num_assist;
 BCD goal_bcd, bcd_assist;
-const uint8_t PLATFORM = PL_GB,
-CLEAR_MSG[0b110] = {0b10000, 1, 0b1010011, 0b1001111, 0b1011111, 0b1101010},
+const uint8_t CLEAR_MSG[0b110] = {0b10000, 1, 0b1010011, 0b1001111, 0b1011111, 0b1101010},
 CLEAR_MSG_69[0b100] = {0b1011011, 0b1010111, 0b1010001, 0b1010011};
 
 extern const hUGESong_t MUS_SECOND_HALF;
@@ -531,13 +530,10 @@ void puzzle_update(void)
 
 					// Due to a bug in binjgb that inverts the panning, the web build re-inverts it
 					if (SFX_ON) {
-						if (PLATFORM == PL_WEB) {
-							rAUDTERM |= 1;
-							rAUDTERM &= ~(0b10000);
-						} else {
-							rAUDTERM |= 0b10000;
-							rAUDTERM &= ~(1);
-						}
+//						rAUDTERM |= 1;
+//						rAUDTERM &= ~(0b10000);
+						rAUDTERM |= 0b10000;
+						rAUDTERM &= ~(1);
 					}
 					rAUD1SWEEP = 0;
 					rAUD1LEN = 0;
@@ -556,13 +552,10 @@ void puzzle_update(void)
 						lose_heart();
 
 					if (SFX_ON) {
-						if (PLATFORM == PL_WEB) {
-							rAUDTERM |= 0b10000;
-							rAUDTERM &= ~(1);
-						} else {
-							rAUDTERM |= 1;
-							rAUDTERM &= ~(0b10000);
-						}
+//						rAUDTERM |= 0b10000;
+//						rAUDTERM &= ~(1);
+						rAUDTERM |= 1;
+						rAUDTERM &= ~(0b10000);
 					}
 					rAUD1SWEEP = 0;
 					rAUD1LEN = 0;

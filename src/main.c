@@ -170,13 +170,10 @@ void main(void)
 								set_bkg_tile_xy(0b101 - i, 0, (puzzle_id >> i) & 1);
 
 							if (SFX_ON) {
-								if (PLATFORM == PL_WEB) {
-									rAUDTERM |= 1;
-									rAUDTERM &= ~(0b10000);
-								} else {
-									rAUDTERM |= 0b10000;
-									rAUDTERM &= ~(1);
-						}
+//								rAUDTERM |= 1;
+//								rAUDTERM &= ~(0b10000);
+								rAUDTERM |= 0b10000;
+								rAUDTERM &= ~(1);
 							}
 							rAUD1SWEEP = 0;
 							rAUD1LEN = 0;
@@ -192,13 +189,10 @@ void main(void)
 								set_bkg_tile_xy(0b101 - i, 0, (puzzle_id >> i) & 1);
 
 							if (SFX_ON) {
-								if (PLATFORM == PL_WEB) {
-									rAUDTERM |= 0b10000;
-									rAUDTERM &= ~(1);
-								} else {
-									rAUDTERM |= 1;
-									rAUDTERM &= ~(0b10000);
-								}
+//								rAUDTERM |= 0b10000;
+//								rAUDTERM &= ~(1);
+								rAUDTERM |= 1;
+								rAUDTERM &= ~(0b10000);
 							}
 							rAUD1SWEEP = 0;
 							rAUD1LEN = 0;
