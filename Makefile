@@ -45,4 +45,4 @@ prepare:
 	mkdir -p $(OBJDIR)
 
 clean:
-	rm -rf  $(OBJDIR)
+	rm -rf $(OBJDIR)
