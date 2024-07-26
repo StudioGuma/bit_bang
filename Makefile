@@ -10,7 +10,7 @@ GBDK_HOME = ~/gbdk/
 LCC = $(GBDK_HOME)bin/lcc
 
 # You can set flags for LCC here
-LCCFLAGS += -Iinclude -Wf--opt-code-size -Wf--Werror -Wm-yn"BIT_BANG" -Wl-lhUGEDriver.lib
+LCCFLAGS += -Iinclude -Wf--opt-code-size -Wf--Werror -Wm-yn"BIT_BANG" -Wl-llib/hUGEDriver.lib
 
 # You can set the name of the .gb ROM file here
 PROJECTNAME    = bit_bang
